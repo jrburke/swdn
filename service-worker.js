@@ -1,4 +1,4 @@
-var cacheName = 'swdn-v1';
+var cacheName = 'swdn-v3';
 
 var urlsToCache = [
   '/swdn/libs/test.js',
@@ -6,7 +6,10 @@ var urlsToCache = [
 ];
 
 self.addEventListener('install', function(event) {
+
   console.log(cacheName + '-install');
+  console.log('has foreign fetch? ' + event.registerForeignFetch);
+
   // Perform install steps
   event.waitUntil(
     caches.open(cacheName)
